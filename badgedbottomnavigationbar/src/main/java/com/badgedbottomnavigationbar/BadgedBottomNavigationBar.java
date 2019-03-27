@@ -1,5 +1,7 @@
 package com.badgedbottomnavigationbar;
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.support.annotation.LayoutRes;
 import android.support.design.widget.BottomNavigationView;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -8,13 +10,16 @@ import android.view.ViewGroup;
 
 
 public class BadgedBottomNavigationBar extends  BottomNavigationView{
-
+    @LayoutRes int badgeLayoutResId;
     public BadgedBottomNavigationBar(Context context) {
         super(context);
     }
 
     public BadgedBottomNavigationBar(Context context, AttributeSet attrs) {
         super(context, attrs);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.badgedBottomNavigationBar);
+        badgeLayoutResId = a.getResourceId(R.styleable.badgedBottomNavigationBar_badge_layout,-1);
+        a.recycle();
     }
 
     public BadgedBottomNavigationBar(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -38,7 +43,7 @@ public class BadgedBottomNavigationBar extends  BottomNavigationView{
         android.support.design.internal.BottomNavigationItemView bottomNavigationItemView =
                 (android.support.design.internal.BottomNavigationItemView) view;
 
-        LayoutInflater.from(getContext()).inflate(R.layout.notification_badge, bottomNavigationItemView,
+        LayoutInflater.from(getContext()).inflate(badgeLayoutResId != -1 ? badgeLayoutResId : R.layout.notification_badge, bottomNavigationItemView,
                 true);
 
     }
