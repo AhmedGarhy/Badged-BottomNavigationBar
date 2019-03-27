@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 //                    break;
 //                }
 //            }
-//            navigation.showBadgeOnMenuItem(menuItemIndex);
+//            navigation.showBadge(menuItemIndex);
 //        }
 //    }
 
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 for (int i = 0; i < 3; i++) {
-                    navigation.showBadgeOnMenuItem(i);
+                    navigation.showBadge(i);
                 }
             }
         });

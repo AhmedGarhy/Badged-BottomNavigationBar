@@ -25,7 +25,7 @@ public class BadgedBottomNavigationBar extends  BottomNavigationView{
      *
      * @param menuItemIndex
      */
-    public void showBadgeOnMenuItem(int menuItemIndex) {
+    public void showBadge(int menuItemIndex) {
         android.support.design.internal.BottomNavigationMenuView bottomNavigationView =
                 (android.support.design.internal.BottomNavigationMenuView) getChildAt(0);
         View view = bottomNavigationView.getChildAt(menuItemIndex);
