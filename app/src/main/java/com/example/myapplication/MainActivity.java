@@ -36,18 +36,6 @@ public class MainActivity extends AppCompatActivity {
     };
 
 
-//    public void updateNavigationBarBadges(String[] ids) {
-//        for (String screenId : ids) {
-//            int menuItemIndex = 2;
-//            for (int i = 0; i < 2; i++) {
-//                if (navigation.getMenu().getItem(i).getTitle().equals(screenId)) {
-//                    menuItemIndex = i;
-//                    break;
-//                }
-//            }
-//            navigation.showBadge(menuItemIndex);
-//        }
-//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
